@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="../../../dist/js/config.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Finder| Contratos</title>
+
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../../../plugins/fontawesome-free/css/all.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../../../dist/css/adminlte.min.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+
+                </ul>
+
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+                            usuario
+                            <i class="icon ion-md-contact"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+                            <div class="dropdown-divider"></div>
+                            <a href="../../profesional/usermode/perfil.html" id="cerrars" class="dropdown-item">
+                                <i class="icon ion-md-power"></i>Ajustar datos de usuario
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+                            <a href="../../login.html" id="cerrars" class="dropdown-item">
+                                <i class="icon ion-md-power"></i>Salir
+                            </a>
+                            <div class="dropdown-divider"></div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="../profesional/dashboard.html" class="brand-link">
+
+                    <span class="brand-text font-weight-light">Finder</span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block" id="username"></a>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                               with font-awesome or any other icon font library -->
+
+                            <li class="nav-header">Usuario</li>
+                            <li class="nav-item">
+                                <a href="../../profesional/usermode/searchprofesional.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Buscar profesionales
+
+                                    </p>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="../../profesional/usermode/contratos.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Contratos
+
+                                    </p>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-header">Profesional</li>
+                            <li class="nav-item">
+                                <a href="../../profesional/publicaciones.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Publicaciones
+
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../profesional/contratos.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Contratos
+
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Profesiones</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item ">perfil</li>
+                                    <li class="breadcrumb-item active">profesiones</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Default box -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Profesiones actuales
+                                    </h3>
+                                </div>
+
+                                <!-- /.card-header -->
+                                <div class="card-body">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>profesion</th>
+                                                <th>acciones</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actuales-list">
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card">
+
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                       Profesiones disponibles
+                                    </h3>
+                                </div>
+
+                                <!-- /.card-header -->
+                                <div class="card-body">
+
+                                    <table id="example3" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                               
+                                                <th>profesion</th>
+                                                <th>acciones</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="disponibles-list">
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                        <!-- Default box -->
+
+
+                    <div class="modal fade" id="modal-default">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Aceptar</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="titulo">Costo</label>
+                                        <input type="number" class="form-control form-control-border" id="costomodal" nombre="costomodal" placeholder="costo" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-between" id="modalaceptarbotones">
+
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+
+
+
+
+
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                    <b>Version</b> 0.8.2
+                </div>
+                <strong>Finder &copy; 2023-2023 , ufps , ingsistemas</strong>
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="../../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../../dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../../../dist/js/session.js"></script>
+
+        <script src="../../../dist/js/profesionalprofesiones.js"></script>
+
+    </body>
+</html>
