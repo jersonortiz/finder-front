@@ -4,7 +4,7 @@
         <script src="../../../dist/js/config.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Finder | Editar publicacion</title>
+        <title>Finder| Contratos</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -12,11 +12,6 @@
         <link rel="stylesheet" href="../../../plugins/fontawesome-free/css/all.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="../../../dist/css/adminlte.min.css">
-        <!-- summernote -->
-        <link rel="stylesheet" href="../../../plugins/summernote/summernote-bs4.min.css">
-        <!-- SimpleMDE -->
-        <link rel="stylesheet" href="../../../plugins/simplemde/simplemde.min.css">
-
     </head>
     <body class="hold-transition sidebar-mini">
         <!-- Site wrapper -->
@@ -35,8 +30,6 @@
                 <ul class="navbar-nav ml-auto">
 
 
-
-
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             usuario
@@ -45,10 +38,10 @@
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
                             <div class="dropdown-divider"></div>
-                            <a href="../../admin/profesional/usermode/perfil.html" id="cerrars" class="dropdown-item">
+                            <a href="../../profesional/usermode/perfil.html" id="cerrars" class="dropdown-item">
                                 <i class="icon ion-md-power"></i>Ajustar datos de usuario
                             </a>
-                            
+
                             <div class="dropdown-divider"></div>
                             <a href="../../login.html" id="cerrars" class="dropdown-item">
                                 <i class="icon ion-md-power"></i>Salir
@@ -64,7 +57,7 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="#" class="brand-link">
+                <a href="../profesional/dashboard.html" class="brand-link">
 
                     <span class="brand-text font-weight-light">Finder</span>
                 </a>
@@ -82,35 +75,16 @@
                     </div>
 
 
+
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class
                                with font-awesome or any other icon font library -->
 
-                            <li class="nav-header">Administracion</li>
-                            <li class="nav-item">
-                                <a href="../../admin/listarprofesional.html" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Listar profesionales
-
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="../../admin/banco.html" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Configurar cuenta bancaria
-                                    </p>
-                                </a>
-                            </li>
-
                             <li class="nav-header">Usuario</li>
                             <li class="nav-item">
-                                <a href="../../admin/profesional/usermode/searchprofesional.html" class="nav-link">
+                                <a href="../../profesional/usermode/searchprofesional.html" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Buscar profesionales
@@ -119,8 +93,9 @@
                                 </a>
                             </li>
 
+
                             <li class="nav-item">
-                                <a href="../../admin/profesional/usermode/contratos.html" class="nav-link">
+                                <a href="../../profesional/usermode/contratos.html" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Contratos
@@ -129,9 +104,10 @@
                                 </a>
                             </li>
 
+
                             <li class="nav-header">Profesional</li>
                             <li class="nav-item">
-                                <a href="../../admin/profesional/publicaciones.html" class="nav-link">
+                                <a href="../../profesional/publicaciones.html" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Publicaciones
@@ -140,7 +116,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../../admin/profesional/contratos.html" class="nav-link">
+                                <a href="../../profesional/contratos.html" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Contratos
@@ -148,9 +124,6 @@
                                     </p>
                                 </a>
                             </li>
-
-
-
 
                         </ul>
                     </nav>
@@ -167,12 +140,13 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Publicaciones</h1>
+                                <h1>Profesiones</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Publicaciones</li>
+                                    <li class="breadcrumb-item ">perfil</li>
+                                    <li class="breadcrumb-item active">profesiones</li>
                                 </ol>
                             </div>
                         </div>
@@ -182,78 +156,75 @@
                 <!-- Main content -->
                 <section class="content">
 
-                    <!-- Default box -->
-                    <div class="card card-outline card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Nueva publicacion
-                            </h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-
-
-                            <form action="" method="post" id="publiform" name="publiform"> 
-                                <div class="form-group">
-                                    <label for="titulo">Titulo</label>
-                                    <input type="text" class="form-control form-control-border" id="titulo" placeholder="titulo">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Default box -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Profesiones actuales
+                                    </h3>
                                 </div>
 
+                                <!-- /.card-header -->
+                                <div class="card-body">
 
-                                <div class="form-group">
-                                    <label for="titulo">Resumen</label>
-                                    <input type="text" class="form-control form-control-border" id="resumen" placeholder="Resumen">
+                                    <table id="example2" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>tipo</th>
+                                                <th>url</th>
+                                                <th>acciones</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actuales-list">
+
+
+                                           
+
+                                        </tbody>
+
+                                        <tfoot>
+                                                                                         <tr>
+                                                <th>
+                                                    <div class="form-group">
+                                                        <label>Typo de red</label>
+                                                        <select class="form-control" id="tipored">
+                                                            <option value="1">option 1</option>
+                                                            <option value="2">option 2</option>
+                                                            <option value="3">option 3</option>
+                                                            <option value="4">option 4</option>
+                                                            <option value="5">option 5</option>
+                                                        </select>
+                                                    </div>
+
+                                                </th>
+                                                <th>
+
+                                                    <div class="form-group">
+                                                        <label>Text</label>
+                                                        <input type="text" class="form-control" placeholder="Enter ..." id="enlacered">
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <button class="btn btn-primary" onclick="añadir()">aceptar</button>
+                                                </th>
+                                            </tr>   
+                                        </tfoot>
+
+                                    </table>
+
+                                     <button class="btn btn-primary">guardar</button>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="titulo">Costo</label>
-                                    <input type="number" class="form-control form-control-border" id="costo" placeholder="costo">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="titulo">Contenido</label>
-
-                                    <textarea id="summernote">
-            
-                                    </textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-block btn-outline-primary">
-                                        guardar
-                                    </button>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="card-footer">
-
-                            <div class="row">
-                                <div class="col-md-3">
-
-
-
-
-                                </div>
-                                <div class="col-md-3">
-
-                                    <a href="publicaciones.html">
-                                        <button type="button" class="btn btn-block btn-outline-primary">
-                                            cancelar
-                                        </button>
-                                    </a>
-                                </div>
+                                <!-- /.card-body -->
                             </div>
-
-
-
-
                         </div>
+                        
+                     
                     </div>
-
-
-
-
 
                 </section>
                 <!-- /.content -->
@@ -281,22 +252,10 @@
         <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../../../dist/js/adminlte.min.js"></script>
-        <!-- Summernote -->
-        <script src="../../../plugins/summernote/summernote-bs4.min.js"></script>
-        <script src="../../../plugins/summernote/lang/summernote-es-ES.min.js"></script>
-        <!-- Page specific script -->
-        <script>
-            $(function () {
-                // Summernote
-                $('#summernote').summernote({
-                    lang:"es-ES"
-                });
-            });
-        </script>
-
+        <!-- AdminLTE for demo purposes -->
         <script src="../../../dist/js/session.js"></script>
 
-        <script src="../../../dist/js/profesionaleditarpublicacion.js"></script>
+        <script src="../../../dist/js/redes.js"></script>
 
     </body>
 </html>

@@ -16,6 +16,7 @@ $(function () {
             
             email: {
                 required: true,
+                email: true
             },
             contraseña: {
                 required: true,
@@ -26,6 +27,7 @@ $(function () {
         
             email: {
                 required: "Introdusca el correo del usuario",
+                email: "el correo no es valido"
             },
             contraseña: {
                 required: "Introdusca la contraseña",
@@ -95,6 +97,18 @@ function login(){
 
                         console.log(data);
                         console.log(data.rol);
+                        console.log(data.msg);
+
+                        if(data.msg){
+
+                            $('#loginmsj').empty();
+
+                            let cont = '<p class="text-danger">'+data.msg+'</p>'
+
+                            $('#loginmsj').append(cont);
+
+
+                        }
 
                         if (data.rol == 1) {
                             location.href = "./admin/dashboard.html";
