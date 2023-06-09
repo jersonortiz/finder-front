@@ -98,8 +98,7 @@ function findprofesional() {
                 '<td>' + estadoprofesional + '</td>' +
                 '<td>' +
                 '<a href="./profesional/usermode/profesional.html?id='+item.profesional.id +'">'+
-                '<button type="button" class="btn btn-info" '+
-                'ver </button></a>' +
+                '<button type="button" class="btn btn-info">ver</button></a>' +
                 '<button type="button" class="btn btn-info" value="' + item.profesional.id + '" onclick="suspenderprofesional(this.value)"  >' +
                 accionsuspension +
                 '</button>' +
