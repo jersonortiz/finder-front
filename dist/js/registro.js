@@ -10,7 +10,13 @@ $(function () {
     $.validator.setDefaults({
         submitHandler: function () {
             console.log('test');
-           registro();
+            registro();
+            let fecha =   $("#fecha").val();
+
+
+  
+            
+         
         }
     });
     $('#registform').validate({
@@ -125,9 +131,15 @@ function registro(){
         let doc = $("#documento").val();
         let pass = $("#contraseña").val();
         //let confpass = $("#confcontraseña").val();
-        let ed = $("#edad").val();
+    
+        let fecha =   $("#fecha").val();
 
-
+        let edd = calcularEdad(new Date(fecha));
+        
+        if(edd <18){
+            alert("debe de ser mayor de edad");
+            return;
+        }
 
 
         let loadurl = url + 'user/registro';
@@ -142,7 +154,7 @@ function registro(){
             documento: doc,
             contraseña: pass,
             rol: 2,
-            edad: ed
+            fechaNacimiento: fecha,
         };
         console.log(data);
 
@@ -180,5 +192,22 @@ function registro(){
                     }
                 });
 
+}
+
+function calcularEdad(fechaNacimiento) {
+  var fechaActual = new Date();
+  var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+  
+  // Verificar si aún no ha pasado el cumpleaños de este año
+  var mesActual = fechaActual.getMonth();
+  var diaActual = fechaActual.getDate();
+  var mesNacimiento = fechaNacimiento.getMonth();
+  var diaNacimiento = fechaNacimiento.getDate();
+  
+  if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+    edad--;
+  }
+  
+  return edad;
 }
 

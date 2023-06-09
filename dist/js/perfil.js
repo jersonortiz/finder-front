@@ -14,6 +14,7 @@ $("#registform").submit(function (e) {
 });
 
 
+
 $(function () {
     $.validator.setDefaults({
         submitHandler: function () {
@@ -84,7 +85,14 @@ function guardar() {
     let correo = $("#correo").val();
     let tel = $("#telefono").val();
     let doc = $("#documento").val();
-    let ed = $("#edad").val();
+        let fecha =   $("#fecha").val();
+
+        let edd = calcularEdad(new Date(fecha));
+        
+        if(edd <18){
+            alert("debe de ser mayor de edad");
+            return;
+        }
 
     let data = {
         id: usuario.id,
@@ -94,7 +102,7 @@ function guardar() {
         telefono: tel,
         documento: doc,
         rol: 2,
-        edad: ed
+        fechaNacimiento: fecha,
     };
 
     let loadurl = url + 'user/edit';
@@ -153,6 +161,7 @@ function loadstart() {
                 $("#telefono").val(data.telefono);
                 $("#documento").val(data.documento);
                 $("#edad").val(data.edad);
+                $("#fecha").val(data.fechaNacimiento);
 
 
             });
@@ -188,4 +197,21 @@ function makeinitnodat() {
         headers: heads
     };
     return init;
+}
+
+function calcularEdad(fechaNacimiento) {
+  var fechaActual = new Date();
+  var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+  
+  // Verificar si aún no ha pasado el cumpleaños de este año
+  var mesActual = fechaActual.getMonth();
+  var diaActual = fechaActual.getDate();
+  var mesNacimiento = fechaNacimiento.getMonth();
+  var diaNacimiento = fechaNacimiento.getDate();
+  
+  if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+    edad--;
+  }
+  
+  return edad;
 }

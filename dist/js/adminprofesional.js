@@ -45,8 +45,10 @@ function findprofesional() {
     if (edad) {
         let result2 = [];
         $.each(result, function (i, item) {
-            console.log(item.profesional.idPersona.edad);
-            if (item.profesional.idPersona.edad == edad) {
+            
+            let edd = calcularEdad(new Date(item.profesional.idPersona.fechaNacimiento));
+          
+            if (edd== edad) {
                 result2.push(item);
             }
 
@@ -302,4 +304,21 @@ function makeinitnodat() {
         headers: heads
     };
     return init;
+}
+
+function calcularEdad(fechaNacimiento) {
+  var fechaActual = new Date();
+  var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+  
+  // Verificar si aún no ha pasado el cumpleaños de este año
+  var mesActual = fechaActual.getMonth();
+  var diaActual = fechaActual.getDate();
+  var mesNacimiento = fechaNacimiento.getMonth();
+  var diaNacimiento = fechaNacimiento.getDate();
+  
+  if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+    edad--;
+  }
+  
+  return edad;
 }

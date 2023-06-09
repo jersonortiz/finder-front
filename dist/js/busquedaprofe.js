@@ -48,13 +48,11 @@ function findprofesional() {
         result = profs;
     }
 
-
-
-
     if (edad) {
         let result2 = [];
         $.each(result, function (i, item) {
-            if (item.edad == edad) {
+            let edd = calcularEdad(new Date(item.fechaNacimiento));
+            if (edd == edad) {
                 result2.push(item);
             }
 
@@ -63,7 +61,7 @@ function findprofesional() {
 
         result = result2;
     }
-
+  
     if (busq) {
         let result3 = [];
         $.each(result, function (i, item) {
@@ -303,3 +301,20 @@ function verprofesional(value) {
  </div>
  
  */
+
+function calcularEdad(fechaNacimiento) {
+  var fechaActual = new Date();
+  var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+  
+  // Verificar si aún no ha pasado el cumpleaños de este año
+  var mesActual = fechaActual.getMonth();
+  var diaActual = fechaActual.getDate();
+  var mesNacimiento = fechaNacimiento.getMonth();
+  var diaNacimiento = fechaNacimiento.getDate();
+  
+  if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+    edad--;
+  }
+  
+  return edad;
+}
