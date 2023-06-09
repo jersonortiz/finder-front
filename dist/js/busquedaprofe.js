@@ -268,40 +268,6 @@ function verprofesional(value) {
 
 
 
-
-/*
- 
- <div class="list-group-item">
- <div class="row">
- <div class="col-auto">
- <img class="img-fluid" src="../../dist/img/user2-160x160.jpg" alt="Photo"
- style="max-height: 160px;">
- </div>
- <div class="col px-4">
- <div>
- <div class="float-right">2023-04-20 10:14pm</div>
- <h3>pepe paez</h3>
- <p class="mb-0">Desarrollador con conocimiento en html , css, javascript, vue.js, java, ruby on
- rails, spring boot, python, flask</p>
- <div class="row">
- <div class="col-md-6">
- <button type="button" class="btn btn-block btn-outline-primary">
- <a href="·">Ver publicacion completa</a>
- </button>
- </div>
- <div class="col-md-6">
- <button type="button" class="btn btn-block btn-outline-primary">
- <a href="·">Ver profesional</a>
- </button>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- 
- */
-
 function calcularEdad(fechaNacimiento) {
   var fechaActual = new Date();
   var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();

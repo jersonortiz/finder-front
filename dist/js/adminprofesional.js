@@ -89,8 +89,10 @@ function findprofesional() {
             accionsuspension = 'suspender';
         }
 
+        let edd = calcularEdad(new Date(item.profesional.idPersona.fechaNacimiento));
+
         fill += '<tr>' + '<td>' + item.profesional.idPersona.nombre + ' ' + item.profesional.idPersona.apellido + '</td>' +
-                '<td>' + item.profesional.idPersona.edad + '</td>' +
+                '<td>' + edd+ '</td>' +
                 '<td>' + item.profesional.idPersona.email + '</td>' +
                 '<td>' + profesiones + '</td>' +
                 '<td>' + estadoprofesional + '</td>' +
@@ -140,9 +142,11 @@ function loadstart() {
                         estadoprofesional = 'activo';
                         accionsuspension = 'suspender';
                     }
+                    let edd = calcularEdad(new Date(item.profesional.idPersona.fechaNacimiento));
+
 
                     fill += '<tr>' + '<td>' + item.profesional.idPersona.nombre + ' ' + item.profesional.idPersona.apellido + '</td>' +
-                            '<td>' + item.profesional.idPersona.edad + '</td>' +
+                            '<td>' + edd + '</td>' +
                             '<td>' + item.profesional.idPersona.email + '</td>' +
                             '<td>' + profesiones + '</td>' +
                             '<td>' + estadoprofesional + '</td>' +
