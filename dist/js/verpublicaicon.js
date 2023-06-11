@@ -34,7 +34,7 @@ function loadstart(idpublicacion) {
                 $('#publicacion-costo').append('$ ' + data.costo);
 
                 let feet = '<button type="button" class="btn btn-block btn-outline-primary"' +
-                        'value="' + data.idProfesional + ' "  onclick="verprofesional(this.value)">Ver profesional</button>'
+                        'value="' + data.idProfesional + ' "  onclick="verprofesional(this.value)">Ver contratista</button>'
 
                 $('#pie-publicacion').append(feet);
 

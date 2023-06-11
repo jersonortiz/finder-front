@@ -14,11 +14,11 @@ function loadbuttons() {
     let fill = "";
 
     if (usuario.rol === 2) {
-        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="toProfesional(this.value)" >Convertirse en profesional</button>';
+        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="toProfesional(this.value)" >Convertirse en contratista</button>';
     }
 
     if (usuario.rol === 3) {
-        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="toUsuario(this.value)">Dejar de ser profesional</button>'+ 
+        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="toUsuario(this.value)">Dejar de ser contratista</button>'+ 
             '<a href="./profesiones.html"><button type="button" class="btn btn-primary btn-block">Ajustar profesiones</button></a>';
     }
 

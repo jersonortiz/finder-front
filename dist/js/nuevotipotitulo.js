@@ -1,53 +1,45 @@
 let url = serverurl;
 let usuario = user;
-
-let redes= [];
+let profesional = "";
 
 $(document).ready(function () {
+    $("#publiform").submit(function (e) {
+        e.preventDefault();
 
-
+        registrar();
+    });
 
 });
 
-function añadir(){
+function registrar() {
+    let loadurl = url + 'titulo/registrotipo';
 
-    let tipored = $("#tipored").val();
-    let enlacered = $("#enlacered").val();
-    val = redes.length;
+    let tit = $("#tipo").val();
 
-    let red= {
-        id: val,
-        tipo:tipored,
-        enlace:enlacered
-            };
+    let data = {
+        tipo: tit,
+    };
 
-    redes.push(red);
+    console.log(data);
+    let init = makeinit(data)
 
-    console.log(redes);
+    fetch(loadurl, init)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                if (data.msg) {
+                    console.log(data);
+                    return;
+                }
+                console.log(data);
 
-    console.log(JSON.stringify(redes));
+                console.log(data);
+                alert("se ha registrado el tipo de titulo");
+                location.href = "./tipotitulo.html";
 
-mostrar();
+            });
 
 
 }
-
-function mostrar(){
-   $('#actuales-list').empty();
-   let fill ='';
-   $.each(redes, function (i, item) {
-
-        fill += '<tr><th>'+item.tipo+'</th>'+
-                '<th>'+item.enlace+'</th>'+
-                '<th>'+
-                '<button class="btn btn-primary" >eliminar</button>'+
-                '</th></tr>';
-
-   });
-
-   $('#actuales-list').append(fill);
-}
-
 
 function makeinit(data) {
     let heads = new Headers();

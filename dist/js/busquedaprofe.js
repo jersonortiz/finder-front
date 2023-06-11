@@ -61,7 +61,7 @@ function findprofesional() {
 
         result = result2;
     }
-  
+
     if (busq) {
         let result3 = [];
         $.each(result, function (i, item) {
@@ -91,7 +91,7 @@ function findprofesional() {
                 '<div class="col-md-6"></div>' +
                 '<div class="col-md-6 ">' +
                 '<button type="button" class="btn btn-block btn-outline-primary" value="' + item.id + '" onclick="verprofesional(this.value)">' +
-                'Ver profesional' +
+                'Ver contratista' +
                 '</button></div></div>';
 
         let ext = '<div class="list-group-item">' +
@@ -215,7 +215,7 @@ function loadstart() {
                                 '<div class="col-md-6"></div>' +
                                 '<div class="col-md-6 ">' +
                                 '<button type="button" class="btn btn-block btn-outline-primary" value="' + item.id + '" onclick="verprofesional(this.value)">' +
-                                'Ver profesional' +
+                                'Ver contratista' +
                                 '</button></div></div>';
 
                         let ext = '<div class="list-group-item">' +
@@ -269,18 +269,18 @@ function verprofesional(value) {
 
 
 function calcularEdad(fechaNacimiento) {
-  var fechaActual = new Date();
-  var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
-  
-  // Verificar si aún no ha pasado el cumpleaños de este año
-  var mesActual = fechaActual.getMonth();
-  var diaActual = fechaActual.getDate();
-  var mesNacimiento = fechaNacimiento.getMonth();
-  var diaNacimiento = fechaNacimiento.getDate();
-  
-  if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
-    edad--;
-  }
-  
-  return edad;
+    var fechaActual = new Date();
+    var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+    // Verificar si aún no ha pasado el cumpleaños de este año
+    var mesActual = fechaActual.getMonth();
+    var diaActual = fechaActual.getDate();
+    var mesNacimiento = fechaNacimiento.getMonth();
+    var diaNacimiento = fechaNacimiento.getDate();
+
+    if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+        edad--;
+    }
+
+    return edad;
 }

@@ -13,8 +13,6 @@ $(document).ready(function () {
 
 });
 
-
-
 function cargarprofesional() {
 
     let idurl = new URLSearchParams({
