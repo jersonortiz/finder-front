@@ -72,7 +72,7 @@ function findpublication() {
                 '</button> </div>' +
                 '<div class="col-md-6 ">' +
                 '<button type="button" class="btn btn-block btn-outline-primary" value="' + item.idProfesional + '" onclick="verprofesional(this.value)">' +
-                'Ver profesional' +
+                'Ver contratista' +
                 '</button></div></div>';
 
         let ext = '<div class="list-group-item">' +
@@ -123,7 +123,7 @@ function loadstart() {
                                 '</button> </div>' +
                                 '<div class="col-md-6 ">' +
                                 '<button type="button" class="btn btn-block btn-outline-primary" value="' + item.idProfesional + '" onclick="verprofesional(this.value)">' +
-                                'Ver profesional' +
+                                'Ver contratista' +
                                 '</button></div></div>';
 
                         let ext = '<div class="list-group-item">' +
