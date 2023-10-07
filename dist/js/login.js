@@ -123,6 +123,10 @@ function login(){
                             location.href = "./profesional/dashboard.html";
 
                         }
+                        if (data.rol == 4) {
+                            location.href = "./empresa/dashboard.html";
+
+                        }
                         console.log(data.rol);
                     }
                 });
