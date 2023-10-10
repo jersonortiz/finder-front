@@ -70,12 +70,12 @@ function loadstart(idpublicacion) {
                //         'value="' + data.idProfesional + ' "  onclick="verprofesional(this.value)">Ver contratista</button>'
 
                 //$('#pie-publicacion').append(feet);
-                let feet = '<a href="./ofertas.html"><button type="button" class="btn btn-block btn-outline-primary">regresar</button>';
+                let feet = '<a href="./postulaciones.html"><button type="button" class="btn btn-block btn-outline-primary">regresar</button>';
 
-                if(user.rol==3){
-                    feet = '<a href="./ofertas.html"><button type="button" class="btn btn-block btn-outline-primary">regresar</button></a>'+
-                    '<button type="button" class="btn btn-block btn-outline-primary" value="'+data.id+'" onclick="postularse(this.value)" >postularse</button>';
-                }
+                //if(user.rol==3){
+                //    feet = '<a href="./postulaciones.html"><button type="button" class="btn btn-block btn-outline-primary">regresar</button></a>'+
+                //    '<button type="button" class="btn btn-block btn-outline-primary" value="'+data.id+'" onclick="postularse(this.value)" >postularse</button>';
+                //}
 
                 $('#pie-publicacion').append(feet);
 
