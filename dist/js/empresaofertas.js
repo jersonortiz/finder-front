@@ -36,6 +36,25 @@ function eliminar(value) {
     }
 }
 
+
+function suspender(value){
+  let loadurl = url + 'oferta/suspender';
+
+    let data = {
+        'id': value
+    };
+
+    let init = makeinit(data)
+
+    fetch(loadurl, init)
+            .then((resp) => resp.json())
+            .then(function (data) {
+console.log('asd');
+                loadstart();
+
+            });
+
+}
 function loadstart() {
 
     let idurl = new URLSearchParams({
@@ -69,11 +88,23 @@ function loadstart() {
                         experiencia= item.experiencia + ' años'
                     }
 
+                        let estadoferta = 'inactiva';
+                        let accionsuspension = 'activar'
+
+                        if (item.estado) {
+                            estadoferta = 'activa';
+                            accionsuspension = 'desactivar';
+                        }
+
+                
+         
                     fill += '<tr>' +
                             '<td>' + item.titulo + '</td>' +
                             '<td>' + item.salario + '</td>' +
                             '<td>' + item.jornada + '</td>' +
                             '<td>' + item.fecha + '</td>' +
+                            '<td><button type="button" class="btn btn-info" value="' + item.id + '" onclick="suspender(this.value)"  >' +
+                            accionsuspension +'</button></td>' +
                             '<td>' + experiencia + '</td>' +
                             '<td>' + item.idSector.nombre + '</td>' +
                             '<td>' + item.idTipoContrato.nombre + '</td>' +

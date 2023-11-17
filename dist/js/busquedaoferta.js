@@ -163,6 +163,8 @@ function loadstart() {
             .then(function (data) {
                 if (data) {
 
+                    console.log(data);
+
                     publicaciones = data;
 
                     let fill = ''

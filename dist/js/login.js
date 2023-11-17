@@ -127,6 +127,16 @@ function login(){
                             location.href = "./empresa/dashboard.html";
 
                         }
+
+                        if (data.rol == 5) {
+                            location.href = "./user/dashboard.html";
+
+                        }
+
+                        if (data.rol == 6) {
+                            location.href = "./user/dashboard.html";
+
+                        }
                         console.log(data.rol);
                     }
                 });

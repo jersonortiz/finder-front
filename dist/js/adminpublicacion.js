@@ -206,6 +206,8 @@ function showprofs(val) {
     });
     $('#profesionselect').append(profesion);
 
+    findprofesional();
+
 }
 
 function loadProfesiones() {

@@ -27,12 +27,50 @@ function loadbuttons() {
         fill = '<a href="./profesiones.html"><button type="button" class="btn btn-primary btn-block">Ajustar profesiones</button></a>';
  
     }
-        if(usuario.rol==4){
+
+    if(usuario.rol==4){
         fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="empresatoUsuario(this.value)">Dejar de ser empresa</button>';
  
     }
 
+    if(usuario.rol==5){
+        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="cancelar(this.value)">Cancelar cambio de tipo de usuario</button>';
+ 
+    }
+
+    if(usuario.rol==6){
+        fill = ' <button type="button" class="btn btn-primary btn-block" value="' + usuario.id + '" onclick="cancelar(this.value)">Cancelar cambio de tipo de usuario</button>';
+ 
+    }
+
     $('#botonaccion').append(fill);
+}
+
+function cancelar(value){
+  let data = {
+        id: value
+    };
+
+    let loadurl = url + 'user/cancelar';
+    console.log(loadurl);
+    let init = makeinit(data);
+
+    fetch(loadurl, init)
+            .then((resp) => resp.json())
+            .then(function (data) {
+
+                console.log(data);
+
+                if (data.msg) {
+                    alert("ya es usuario")
+                    return;
+                }
+
+                sessionStorage.setItem("USER_SESSION", JSON.stringify(data));
+
+                location.href = "../user/perfil.html";
+
+            });
 }
 
 function empresatoUsuario(value){
@@ -117,7 +155,9 @@ function toProfesional(value) {
 
                 sessionStorage.setItem("USER_SESSION", JSON.stringify(data));
 
-                location.href = "../profesional/dashboard.html";
+                //location.href = "../profesional/dashboard.html";
+                location.href = "../user/perfil.html";
+
 
             });
 
@@ -149,7 +189,8 @@ function toEmpresa(value) {
 
                 sessionStorage.setItem("USER_SESSION", JSON.stringify(data));
 
-                location.href = "../empresa/dashboard.html";
+                //location.href = "../empresa/dashboard.html";
+                location.href = "../user/perfil.html";
 
             });
 

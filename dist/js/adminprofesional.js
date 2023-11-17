@@ -2,6 +2,9 @@ let url = serverurl;
 
 var listadoprofesionales;
 
+var sectoresglb;
+var profesionesglb;
+
 
 $(document).ready(function () {
 
@@ -114,7 +117,7 @@ function findprofesional() {
 function loadstart() {
     let loadurl = url + 'profesional/gestion';
     let init = makeinitnodat();
-    console.log('dadadaa');
+ 
 
     $('#tabla-profesionales').empty();
 
@@ -127,7 +130,7 @@ function loadstart() {
                 let fill = ''
                 $.each(data, function (i, item) {
 
-                    console.log(item);
+                
 
                     let profesiones = ""
                     $.each(item.profesiones, function (i, prof) {
@@ -196,7 +199,7 @@ function eliminarprofesional(value) {
     let init = makeinit(data)
 
     if (confirm("eliminar usuario") == true) {
-        console.log('borrar');
+      
         fetch(loadurl, init)
                 .then((resp) => resp.json())
                 .then(function (data) {
@@ -221,6 +224,7 @@ function loadSectores() {
                     return;
                 }
                 console.log(data);
+                sectoresglb = data;
 
                 let sectores = "";
                 $.each(data, function (i, item) {
@@ -252,6 +256,9 @@ function showprofs(val) {
 
     });
     $('#profesionselect').append(profesion);
+    findprofesional();
+
+
 
 }
 
@@ -265,6 +272,9 @@ function loadProfesiones() {
             .then(function (data) {
 
                 profesiones = data;
+                profesionesglb = data;
+                console.log(data);
+
 
                 let profesion = "";
                 $.each(data, function (i, item) {

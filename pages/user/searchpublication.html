@@ -149,7 +149,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Precios menores a:</label>
-                                                <input type="number" class="form-control" id="precio" placeholder="$$$">
+                                                <input type="number" class="form-control" id="precio" placeholder="$$$" oninput="findpublication()">
                                             </div>
                                         </div>
 
@@ -168,7 +168,7 @@
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
                                             <input type="search" class="form-control form-control-lg" id="campobusqueda"
-                                                   placeholder="Buscar publicaciones" >
+                                                   placeholder="Buscar publicaciones" oninput="findpublication()">
                                             <div class=" input-group-append">
                                                 <button type="button" class="btn btn-lg btn-default" onclick="findpublication()">
                                                     <i class="fa fa-search"></i>

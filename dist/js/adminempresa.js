@@ -10,21 +10,15 @@ $(document).ready(function () {
 });
 
 
+
 function findprofesional() {
     $('#tabla-profesionales').empty();
 
     let profesionales = listadoprofesionales;
 
-
-
-
     let busq = $("#campobusqueda").val();
 
     let result = profesionales;
-
- 
-   
-
 
     if (busq) {
         let result3 = [];
@@ -39,14 +33,10 @@ function findprofesional() {
 
     }
 
-    console.log(result);
+
 
     let fill = ''
     $.each(result, function (i, item) {
-
-        console.log(item);
-
-     
 
         let estadoprofesional = 'suspendido';
         let accionsuspension = 'retirar suspension'
@@ -77,7 +67,7 @@ function findprofesional() {
 function loadstart() {
     let loadurl = url + 'empresa/listadm';
     let init = makeinitnodat();
-    console.log('dadadaa');
+  
 
     $('#tabla-profesionales').empty();
 
@@ -85,17 +75,14 @@ function loadstart() {
             .then((resp) => resp.json())
             .then(function (data) {
 
-                console.log(data);
+             
 
                 listadoprofesionales = data;
 
                 let fill = ''
                 $.each(data, function (i, item) {
 
-                    console.log(item);
-
-                   
-
+        
                     let estadoprofesional = 'suspendido';
                     let accionsuspension = 'retirar suspension'
 
@@ -154,11 +141,11 @@ function eliminarprofesional(value) {
     let init = makeinit(data)
 
     if (confirm("eliminar empresa") == true) {
-        console.log('borrar');
+    
         fetch(loadurl, init)
                 .then((resp) => resp.json())
                 .then(function (data) {
-                    console.log(data);
+             
                     loadstart();
 
                 });

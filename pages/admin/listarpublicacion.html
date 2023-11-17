@@ -155,6 +155,27 @@
                                     </p>
                                 </a>
                             </li>
+
+                           <li class="nav-item">
+                                <a href="../admin/aprobarprofesional.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Aprobar profesionales
+
+                                    </p>
+                                </a>
+                            </li>
+
+                           <li class="nav-item">
+                                <a href="../admin/aprobarempresa.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Aprobar empresas
+
+                                    </p>
+                                </a>
+                            </li>
+                            
                             <li class="nav-header">Contratante</li>
                             <li class="nav-item">
                                 <a href="../admin/profesional/usermode/searchprofesional.html" class="nav-link">
@@ -263,7 +284,7 @@
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label>Profesion:</label>
-                                                <select class="select2" style="width: 100%;" id="profesionselect">
+                                                <select class="select2" style="width: 100%;" id="profesionselect" onchange="findprofesional()">
                                                     <option selected value="0">Todos</option>
                                                 </select>
                                             </div>

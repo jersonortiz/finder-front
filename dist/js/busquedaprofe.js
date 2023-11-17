@@ -35,8 +35,6 @@ function findprofesional() {
 
             $.each(item.profesiones, function (i, listprofs) {
                 if (listprofs.id == profesion || profesion == 0) {
-
-
                     result.push(item);
                     return false;
                 }
@@ -115,7 +113,7 @@ function showprofs(val) {
     console.log(val);
     profs = profesiones
 
-    let profesion = "";
+     let profesion = '<option value="0">Todos</option>';
 
     $('#profesionselect').empty();
 
@@ -129,6 +127,8 @@ function showprofs(val) {
 
     });
     $('#profesionselect').append(profesion);
+
+    findprofesional();
 
 }
 

@@ -157,7 +157,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Profesion:</label>
-                                                <select class="select2" style="width: 100%;" id="profesionselect">
+                                                <select class="select2" style="width: 100%;" id="profesionselect" onchange="findprofesional()">
                                                     <option selected value="0">todos</option>
                                                 </select>
                                             </div>
@@ -166,7 +166,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Edad:</label>
-                                                <input type="number" class="form-control" id="edad" placeholder="edad">
+                                                <input type="number" class="form-control" id="edad" placeholder="edad" oninput="findprofesional()">
 
 
                                             </div>
@@ -188,7 +188,7 @@
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
                                             <input type="search" class="form-control form-control-lg"
-                                                   placeholder="Buscar contratistas por nombre" id="campobusqueda">
+                                                   placeholder="Buscar contratistas por nombre" id="campobusqueda" oninput="findprofesional()">
                                             <div class="input-group-append">
                                                 <button type="button" class="btn btn-lg btn-default" onclick="findprofesional()">
                                                     <i class="fa fa-search"></i>
