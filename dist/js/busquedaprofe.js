@@ -30,7 +30,7 @@ function findprofesional() {
 
     let result = [];
 
-    if (sector != 0) {
+    if (profesion != 0) {
         $.each(profs, function (i, item) {
 
             $.each(item.profesiones, function (i, listprofs) {
