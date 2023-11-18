@@ -219,7 +219,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Sector:</label>
-                                                <select class="select2" style="width: 100%;" id="sectorselect">
+                                                <select class="select2" style="width: 100%;" id="sectorselect" onchange="findpublication()" >
                                                     <option value="0" selected>todos</option>
                                                 </select>
                                             </div>
@@ -228,7 +228,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Tipo contrato:</label>
-                                                <select class="select2" style="width: 100%;" id="tipocontratoselect" >
+                                                <select class="select2" style="width: 100%;" id="tipocontratoselect" onchange="findpublication()"  >
                                                     <option value="0" selected>todos</option>
                                                 </select>
                                             </div>
@@ -237,7 +237,7 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Jornada:</label>
-                                                <select class="select2" style="width: 100%;" id="jornada" >
+                                                <select class="select2" style="width: 100%;" id="jornada" onchange="findpublication()" >
                                                     <option value="0" selected>todos</option>
                                                     <option value="1">Tiempo completo</option>
                                                     <option value="2">por horas</option>
@@ -250,14 +250,14 @@
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Años de experiencia</label>
-                                                <input type="number" class="form-control" id="experiencia" placeholder="">
+                                                <input type="number" class="form-control" id="experiencia" placeholder="" oninput="findpublication()">
                                             </div>
                                         </div>
 
                                         <div class="col-2">
                                             <div class="form-group">
                                                 <label>Salarios menores a:</label>
-                                                <input type="number" class="form-control" id="precio" placeholder="$$$">
+                                                <input type="number" class="form-control" id="precio" placeholder="$$$" oninput="findpublication()">
                                             </div>
                                         </div>
 
@@ -266,7 +266,7 @@
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
                                             <input type="search" class="form-control form-control-lg" id="campobusqueda"
-                                                   placeholder="Buscar ofertas" >
+                                                   placeholder="Buscar ofertas" oninput="findpublication()" >
                                             <div class=" input-group-append">
                                                 <button type="button" class="btn btn-lg btn-default" onclick="findpublication()">
                                                     <i class="fa fa-search"></i>
