@@ -23,9 +23,11 @@ $(function () {
         rules: {
             nombre: {
                 required: true,
+                lettersonly: true,
             },
             apellido: {
                 required: true,
+                lettersonly: true,
             },
             correo: {
                 required: true,
@@ -35,6 +37,7 @@ $(function () {
             },
             documento: {
                 required: true,
+                digits: true,
             },
             edad: {
                 required: true,
@@ -54,9 +57,11 @@ $(function () {
         messages: {
             nombre: {
                 required: "Introdusca el nombre de usuario",
+                lettersonly: "El nombre no debe de contener numeros o demas carateres especiales",
             },
             apellido: {
                 required: "Introdusca el apellido del usaurio",
+                lettersonly: "El apellido no debe de contener numeros o demas carateres especiales"
             },
             correo: {
                 required: "Introdusca el correo del usuario",
@@ -66,6 +71,7 @@ $(function () {
             },
             documento: {
                 required: "Introdusca el documento del usuario",
+                digits: "El documento no debe de contener letras",
             },
             edad: {
                 required: "Introdusca la edad del usuario",
